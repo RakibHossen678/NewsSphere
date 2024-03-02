@@ -8,10 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="w-10/12 mx-auto py-8">
+    <header class="lg:w-9/12 px-2 mx-auto py-8">
         <section class="flex justify-between items-center">
-            <h1 class="text-4xl font-medium">ReTro</h1>
-            <div class="flex justify-between items-center space-x-12">
+            <h1 class="lg:text-4xl text-2xl font-medium">ReTro</h1>
+            <div class="flex justify-between items-center lg:space-x-10 space-x-2">
                 <div class="tooltip tooltip-bottom border-2 border-gray-400 px-2 py-2 rounded-full" data-tip="Home">
                     <img src="images/home.png" alt="">
                 </div>
@@ -25,11 +25,48 @@
                     <img class="w-5" src="images/flag.png" alt="">
                 </div>
                 <div>
-                    <button class="bg-[#797DFC] px-9 py-3 text-white font-medium rounded-3xl">Sign In</button>
+                    <button class="bg-[#797DFC] lg:px-9 px-4 py-3 text-white font-medium rounded-3xl">Sign In</button>
                 </div>
             </div>
         </section>
-        <section></section>
+        <section class="pt-9 text-white">
+            <div class="hero min-h-[500px] rounded-3xl" style="background-image: url(images/banner.png);">
+                <div class="lg:translate-y-28 translate-y-48">
+                    <img class="" src="images/bgbanner.png" alt="">
+                </div>
+                <div class="flex flex-col lg:flex-row justify-between items-center w-full lg:px-24 px-2">
+                    <div>
+                        <h1 class="lg:text-7xl text-3xl pb-4 font-medium">Welcome to the <br> <span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                        <p class="text-gray-300 pb-2">Share your favorite opinion and win  a forum <br> coffee mug!</p>
+                        <div class="bg-[#FFFFFF] lg:w-96 flex justify-between px-[2px] rounded-3xl py-[2px] mt-2 ">
+                            <input class="bg-transparent px-1" type="text" placeholder="Search here anything" >
+                            <button class="bg-[#797DFC] lg:px-9 px-3 py-3 text-white font-medium rounded-3xl">Search</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl text-gray-700 mt-2 px-6 py-5 w-64">
+                        <h3 class="flex justify-between pb-4 text-lg font-medium">
+                            <span>Registered Users</span>
+                            <span>01</span>
+                        </h3>
+                        <h3 class="flex justify-between pb-4 text-lg font-medium">
+                            <span>Forum</span>
+                            <span>03</span>
+                        </h3>
+                        <h3 class="flex justify-between pb-4 text-lg font-medium">
+                            <span>Topics</span>
+                            <span>02</span>
+                        </h3>
+                        <h3 class="flex justify-between pb-4 text-lg font-medium">
+                            <span>Replies</span>
+                            <span>05</span>
+                        </h3>
+                    </div>
+                    
+                    </div>
+                </div>
+                
+              </div>
+        </section>
     </header>
     <main></main>
     <footer></footer>
