@@ -1,5 +1,7 @@
 const loadPost = async (inputFieldText='comedy') => {
     document.getElementById('loadingSpinner').classList.remove('hidden')
+    clearTimeout(timeOut)
+
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputFieldText}`
     
   );
@@ -33,7 +35,7 @@ const loadPost = async (inputFieldText='comedy') => {
                         <h1 class="text-black text-lg font-medium mb-2">${post.title}</h1>
                         <p class="w-full  pb-4">${post.description}</p>
                         
-                        <div class="flex justify-between pt-3 border-t-2 border-dashed  border-gray-600 w-full">
+                        <div class="flex space-x-48 pt-3 border-t-2 border-dashed  border-gray-600 w-full">
                             <div class="flex space-x-6">
                                 <h1 class="flex items-center space-x-2 text-gray-600"><img src="images/comment.png" alt=""><span>${post.comment_count}</span></h1>
                                 <h1 class="flex items-center space-x-2 text-gray-600"><img src="images/eye.png" alt=""><span>${post.view_count}</span></h1>
@@ -54,7 +56,7 @@ const loadPost = async (inputFieldText='comedy') => {
 let count=0;
 const ShowTitle=document.getElementById('show-title')
 const showTitle = (title,view)=>{
-    console.log(title,view)
+    // console.log(title,view)
     count++
     document.getElementById('clickCount').innerText=count;
     console.log(title,view)
@@ -116,4 +118,4 @@ loadAllPost()
 // showTitle()
 loadPost();
 
-setTimeout(loadPost, 2000);
+const timeOut=setTimeout(loadPost,2000)
