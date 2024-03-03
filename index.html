@@ -40,8 +40,8 @@
                         <p class="text-gray-300 pb-2">Share your expertise, learn from others, and broaden your horizons. <br> Whether you're a seasoned expert or a curious learner, there's always <br> something new to discover on Discussion Avenue.</p>
                         <div class="bg-[#FFFFFF] lg:w-96 flex justify-between px-[2px] rounded-3xl py-[2px] mt-2 ">
                             
-                            <input class="rounded-2xl px-1 z-10 text-gray-600 border-none outline-none" type="text" placeholder="Search here anything" >
-                            <button class="bg-[#797DFC] lg:px-9 px-3 py-3 text-white font-medium rounded-3xl z-10">Search</button>
+                            <input id="inputField" class="rounded-2xl px-1 z-10 text-gray-600 border-none outline-none" type="text" placeholder="Search here anything" >
+                            <button onclick="handleSearchButton()" class="bg-[#797DFC] lg:px-9 px-3 py-3 text-white font-medium rounded-3xl z-10">Search</button>
                         </div>
                     </div>
                     <div class="bg-white rounded-2xl text-gray-700 mt-2 px-6 py-5 w-64 z-10">
@@ -75,6 +75,7 @@
                 <h1 class="text-[#12132D] text-5xl font-medium pb-4">Let’s Discuss</h1>
                 <p class="max-w-3xl mx-auto text-gray-500">Whether you're interested in technology, arts, literature, science, or anything in between, Connect Forum offers a diverse range of discussion categories to explore.</p>
             </div>
+            
             <div  class="py-10 flex flex-col lg:flex-row space-y-3 justify-between">
                 <div id="post_container" class="space-y-4 ">
                     

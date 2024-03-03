@@ -1,12 +1,13 @@
-const loadPost = async () => {
-  const res = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
+const loadPost = async (inputFieldText='comedy') => {
+  const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputFieldText}`
+    
   );
   const data = await res.json();
   const posts = data.posts;
   // console.log(posts)
 
   const postContainer = document.getElementById("post_container");
+  postContainer.textContent=''
   
   posts.forEach((post) => {
     // console.log(post);
@@ -97,6 +98,16 @@ const loadAllPost=async()=>{
 
     })
 }
+
+
+const handleSearchButton=()=>{
+    const inputFieldValue=document.getElementById('inputField').value
+    console.log(inputFieldValue)
+    loadPost(inputFieldValue)
+
+}
+
+
 loadAllPost()
 // showTitle()
 loadPost();
