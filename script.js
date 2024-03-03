@@ -62,6 +62,42 @@ const showTitle = (title,view)=>{
     ShowTitle.appendChild(showTitleDiv)
 
 }
+
+
+const loadAllPost=async()=>{
+    const res=await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const data=await (res.json())
+    const latestPosts=data
+    // console.log(latestPosts)
+    const LatestPostContainer=document.getElementById('LatestPostContainer')
+    latestPosts.forEach(item=>{
+        // console.log(item)
+        const latestPostDiv=document.createElement('div')
+        latestPostDiv.className='border-2 rounded-lg max-w-[350px]  px-4 py-4'
+        latestPostDiv.innerHTML=`
+        <div class="w-80">
+                        <img class="w-full rounded-2xl" src="${item.cover_image}" alt="">
+                    </div>
+                    <div>
+                        <h2 class="flex items-center space-x-2 py-4">
+                            <img class="w-7 " src="images/date.png" alt=""><span class="text-gray-500">${item.author.posted_date ||'No publish date'}</span>
+                        </h2>
+                        <h1 class="font-semibold mb-2">${item.title}</h1>
+                        <p>${item.description}</p>
+                        <div class="flex items-center space-x-2 pt-5">
+                            <span><img class="w-12 rounded-full" src="${item.profile_image}" alt=""></span>
+                            <span>
+                                <h3 class="font-medium">${item.author.designation || 'Unknown'}</h3>
+                                <p class="text-gray-500">${item.author.name }</p>
+                            </span>
+                        </div>
+                    </div>
+        `
+        LatestPostContainer.appendChild(latestPostDiv)
+
+    })
+}
+loadAllPost()
 // showTitle()
 loadPost();
 
