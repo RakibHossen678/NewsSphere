@@ -1,7 +1,9 @@
-const loadPost = async (inputFieldText='comedy') => {
+const loadPost = async (inputFieldText='') => {
     document.getElementById('loadingSpinner').classList.remove('hidden')
-    clearTimeout(timeOut)
+   
 
+    clearTimeout(timeOut)
+    
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputFieldText}`
     
   );
