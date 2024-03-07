@@ -1,6 +1,6 @@
 const loadPost = async (inputFieldText='') => {
     document.getElementById('loadingSpinner').classList.remove('hidden')
-   
+    
 
     clearTimeout(timeOut)
     
@@ -16,6 +16,8 @@ const loadPost = async (inputFieldText='') => {
   postContainer.textContent=''
   
   posts.forEach((post) => {
+    
+
     document.getElementById('loadingSpinner').classList.add('hidden')
     // console.log(post);
     const postDiv = document.createElement("div");
@@ -37,11 +39,11 @@ const loadPost = async (inputFieldText='') => {
                         <h1 class="text-black text-lg font-medium mb-2">${post.title}</h1>
                         <p class="w-full  pb-4">${post.description}</p>
                         
-                        <div class="flex space-x-48 pt-3 border-t-2 border-dashed  border-gray-600 w-full">
-                            <div class="flex space-x-6">
-                                <h1 class="flex items-center space-x-2 text-gray-600"><img src="images/comment.png" alt=""><span>${post.comment_count}</span></h1>
-                                <h1 class="flex items-center space-x-2 text-gray-600"><img src="images/eye.png" alt=""><span>${post.view_count}</span></h1>
-                                <h1 class="flex items-center space-x-2 text-gray-600"><img src="images/time.png" alt=""><span>${post.posted_time}</span>min</h1>
+                        <div class="flex items-center lg:space-x-48 space-x-10  pt-3 border-t-2 border-dashed  border-gray-600 ">
+                            <div class="flex lg:space-x-6 space-x-1">
+                                <h1 class="flex lg:flex-row flex-col items-center lg:space-x-2 space-x-2 text-gray-600"><img src="images/comment.png" alt=""><span>${post.comment_count}</span></h1>
+                                <h1 class="flex items-center lg:flex-row flex-col lg:space-x-2 space-x-2  text-gray-600"><img src="images/eye.png" alt=""><span>${post.view_count}</span></h1>
+                                <h1 class="flex lg:flex-row flex-col items-center  lg:space-x-2 space-x-2  text-gray-600"><img src="images/time.png" alt=""><span class='flex lg:flex-row flex-col'>${post.posted_time}</span>min</h1>
                             </div>
                             <div class='rounded-2xl'>
                                 <button onclick='showTitle("${post.title.replace("Beginner's",'Beginners')}", ${post.view_count})'><img class='' src="images/email.png" alt=""></button>
@@ -112,6 +114,7 @@ const handleSearchButton=()=>{
     const inputFieldValue=document.getElementById('inputField').value
     console.log(inputFieldValue)
     loadPost(inputFieldValue)
+
 
 }
 
